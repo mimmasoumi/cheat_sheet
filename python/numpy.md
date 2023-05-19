@@ -1,63 +1,103 @@
-# cheat sheet for NumPy:
+# cheat sheet for NumPy
 
-1. Import NumPy: `import numpy as np`
+- **Import NumPy:**
+`import numpy as np`
 
-2. Create an array: `arr = np.array([1, 2, 3])`
+### Creating Arrays:
 
-3. Create a 2D array: `arr_2d = np.array([[1, 2, 3], [4, 5, 6]])`
+- create an array from a list
+`arr1 = np.array([1, 2, 3])`
 
-4. Get the shape of an array: `arr.shape`
+- create an array of zeros
+`arr2 = np.zeros((3, 4))`
 
-5. Get the size of an array: `arr.size`
+- create an array of ones
+`arr3 = np.ones((2, 2))`
 
-6. Get the data type of an array: `arr.dtype`
+- create an array of random values
+`arr4 = np.random.rand(3, 4)`
 
-7. Reshape an array: `arr.reshape((2, 2))`
+- create an array with a range of values
+`arr5 = np.arange(10)`
 
-8. Concatenate arrays vertically: `np.vstack((arr1, arr2))`
+- create an array with evenly spaced values
+`arr6 = np.linspace(0, 1, num=5)`
 
-9. Concatenate arrays horizontally: `np.hstack((arr1, arr2))`
+### Array Attributes:
 
-10. Generate an array of zeros: `np.zeros((2, 2))`
+- get the shape of an array
+`arr.shape`
 
-11. Generate an array of ones: `np.ones((2, 2))`
+- get the number of dimensions of an array
+`arr.ndim`
 
-12. Generate a range of values: `np.arange(0, 10, 2)`
+- get the data type of an array
+`arr.dtype`
 
-13. Generate evenly spaced values: `np.linspace(0, 1, 5)`
+- get the size (total number of elements) of an array
+`arr.size`
 
-14. Add two arrays: `arr1 + arr2`
+- get the itemsize (memory usage per element) of an array
+`arr.itemsize`
 
-15. Subtract two arrays: `arr1 - arr2`
+- get the total number of bytes used by an array
+`arr.nbytes`
 
-16. Multiply two arrays: `arr1 * arr2`
+### Indexing and Slicing:
 
-17. Divide two arrays: `arr1 / arr2`
+- indexing
+`arr[0]` first element
+`arr[-1]`  last element
+`arr[2,3]`  element at row 2, column 3
 
-18. Dot product of two arrays: `np.dot(arr1, arr2)`
+- slicing
+`arr[0:3]`  first three elements
+`arr[:, 0]`  first column
+`arr[1:3, 2:4]`  elements in rows 1-2 and columns 2-3
 
-19. Transpose an array: `arr.T`
+### Mathematical Operations:
 
-20. Find the minimum value in an array: `np.min(arr)`
+- scalar addition
+`arr + 2`
 
-21. Find the maximum value in an array: `np.max(arr)`
+- scalar multiplication
+`arr * 2`
 
-22. Find the sum of values in an array: `np.sum(arr)`
+- element-wise addition
+`arr1 + arr2`
 
-23. Find the mean value in an array: `np.mean(arr)`
+- element-wise multiplication
+`arr1 * arr2`
 
-24. Find the standard deviation of values in an array: `np.std(arr)`
+- dot product of two arrays
+`np.dot(arr1, arr2)`
 
-25. Find the index of the minimum value in an array: `np.argmin(arr)`
+- sum of all elements in an array
+`np.sum(arr)`
 
-26. Find the index of the maximum value in an array: `np.argmax(arr)`
+- mean of all elements in an array
+`np.mean(arr)`
 
-27. Sort an array in ascending order: `np.sort(arr)`
+- standard deviation of all elements in an array
+`np.std(arr)`
 
-28. Sort an array in descending order: `np.sort(arr)[::-1]`
+- maximum and minimum values in an array
+`np.max(arr)`
+`np.min(arr)`
 
-29. Get unique values in an array: `np.unique(arr)`
+### Array Manipulation:
 
-30. Save an array to a file: `np.save('filename.npy', arr)`
+- reshape an array
+`arr.reshape((3, 4))`
 
-31. Load an array from a file: `np.load('filename.npy')`
+- flatten an array
+`arr.flatten()`
+
+- concatenate two arrays (along rows)
+`np.concatenate((arr1, arr2), axis=0)`
+
+- stack two arrays vertically
+`np.vstack((arr1, arr2))`
+
+- stack two arrays horizontally
+`np.hstack((arr1, arr2))`
